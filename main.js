@@ -25,7 +25,7 @@ function buyCarrotFarm() {
 function hardReset() {
     gameData.carrot = 10
     gameData.carrotFarm = 0
-    gameData.CarrotFarmCost = 10
+    gameData.carrotFarmCost = 10
     document.getElementById("carrotHarvested").innerHTML = "10 Carrot Harvested"
     document.getElementById("carrotFarm").innerHTML = "Add Farm (Currently 0) Cost: 10 Carrot"
 }
