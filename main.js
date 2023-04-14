@@ -18,7 +18,7 @@ function buyCarrotFarm() {
         gameData.carrotFarm += 1
         gameData.carrotFarmCost *= 2
         document.getElementById("carrotHarvested").innerHTML = gameData.carrot + " Carrot Harvested"
-        document.getElementById("carrotFarm").innerHTML = "Add Farm (Currently " + gameData.carrotFarm + ") Cost: " + gameData.CarrotFarmCost + " Carrot"
+        document.getElementById("carrotFarm").innerHTML = "Add Farm (Currently " + gameData.carrotFarm + ") Cost: " + gameData.carrotFarmCost + " Carrot"
     }
 }
 
