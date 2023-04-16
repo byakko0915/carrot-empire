@@ -1,14 +1,22 @@
 var gameData = {
     carrot: 10,
+    carrotMultiplier: 1,
+    carrotPerSecond: 0,
     carrotFarm: 0,
     carrotFarmCost: 10,
+    empire: 0,
+    empireCost: 10,
+    empireMultiplier: 1,
     dwarves: 0.1
 }
 
 function harvestCarrot() {
     if (gameData.carrotFarm !== null) {
-        gameData.carrot += gameData.carrotFarm
-        document.getElementById("carrotHarvested").innerHTML = gameData.carrot + " Carrot Harvested"
+        gameData.carrotMultiplier = gameData.empireMultiplier
+        gameData.carrotPerSecond = gameData.carrotFarm * gameData.carrotMultiplier
+        gameData.carrot += gameData.carrotPerSecond
+        document.getElementById("carrotHarvested").innerHTML = gameData.carrot + " Carrot harvested"
+        document.getElementById("carrotPerSecond").innerHTML = gameData.carrotPerSecond + " Carrot per second"
     }
 }
 
@@ -16,18 +24,33 @@ function buyCarrotFarm() {
     if (gameData.carrot >= gameData.carrotFarmCost) {
         gameData.carrot -= gameData.carrotFarmCost
         gameData.carrotFarm += 1
-        gameData.carrotFarmCost *= 2
-        document.getElementById("carrotHarvested").innerHTML = gameData.carrot + " Carrot Harvested"
-        document.getElementById("carrotFarm").innerHTML = "Add Farm (Currently " + gameData.carrotFarm + ") Cost: " + gameData.carrotFarmCost + " Carrot"
+        gameData.carrotFarmCost = Math.floor(gameData.carrotFarmCost * 1.4)
+        document.getElementById("carrotHarvested").innerHTML = gameData.carrot + " Carrot harvested"
+        document.getElementById("carrotFarm").innerHTML = "Add Farm (Currently " + gameData.carrotFarm + ")<br>Cost: " + gameData.carrotFarmCost + " Carrot"
+        if (gameData.carrotFarm >= 10) {
+            
+        }
     }
 }
 
-function hardReset() {
-    gameData.carrot = 10
-    gameData.carrotFarm = 0
-    gameData.carrotFarmCost = 10
-    document.getElementById("carrotHarvested").innerHTML = "10 Carrot Harvested"
-    document.getElementById("carrotFarm").innerHTML = "Add Farm (Currently 0) Cost: 10 Carrot"
+function buildEmpire() {
+    if (gameData.carrotFarm >= gameData.empireCost) {
+        gameData.carrotFarm -= gameData.empireCost
+        gameData.empire += 1
+        gameData.empireCost *= 10
+        gameData.empireMultiplier *=10
+        gameData.carrotFarmCost = Math.floor(10 * (1.4 ** gameData.carrotFarm))
+        document.getElementById("carrotFarm").innerHTML = "Add Farm (Currently " + gameData.carrotFarm + ")<br>x10 Carrot production<br>Cost: " + gameData.carrotFarmCost + " Carrot"
+        if (gameData.empire == 1) {
+            document.getElementById("buildEmpire").innerHTML = "Build a town Cost: 100 Farm"
+        }
+        if (gameData.empire == 2) {
+            document.getElementById("buildEmpire").innerHTML = "Build a Empire Cost: 1000 Farm"
+        }
+        if (gameData.empire == 3) {
+            document.getElementById("buildEmpire").innerHTML = "You already have a Empire"
+        }
+    }
 }
 
 var mainGameLoop = window.setInterval(function() {

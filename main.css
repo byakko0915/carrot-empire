@@ -1,0 +1,11 @@
+#carrotPerSecond {
+    width: fit-content;
+}
+.button {
+    display: flex;
+}
+.button1 {
+    width: 15em;
+    height: 4em;
+    margin: 0.5em;
+}

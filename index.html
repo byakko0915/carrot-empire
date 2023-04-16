@@ -5,11 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Carrot Empire</title>
+    <link rel="stylesheet" href="./main.css">
 </head>
 <body>
-    <p id="carrotHarvested">10 Carrot Harvested</p>
-    <button onclick="buyCarrotFarm()" id="carrotFarm">Add Farm (Currently 0) Cost: 10 Carrot</button>
-    <button onclick="hardReset()">HARD RESET</button>
+    <p id="carrotHarvested" style="font-size: 2em; line-height: 0.5em;">10 Carrot harvested</p>
+    <p id="carrotPerSecond" style="line-height: 0.5em; margin-bottom: 4em;">0 Carrot per second</p>
+    <p style="font-size: 1.5em; font-weight: bold; line-height: 0;">Upgrades</p>
+    <div class="button">
+        <button onclick="buyCarrotFarm()" id="carrotFarm" class="button1">Add Farm (Currently 0)<br>Cost: 10 Carrot</button>
+        <button onclick="buildEmpire()" id="buildEmpire" class="button1">Build a village<br>x10 Carrot production<br>Cost: 10 Farm</button>
+    </div>
     <script src="main.js" charset="UTF-8" type="text/javascript"></script>
 </body>
 </html>
