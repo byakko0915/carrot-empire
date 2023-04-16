@@ -40,12 +40,12 @@ function buildEmpire() {
         gameData.empireCost *= 10
         gameData.empireMultiplier *=10
         gameData.carrotFarmCost = Math.floor(10 * (1.4 ** gameData.carrotFarm))
-        document.getElementById("carrotFarm").innerHTML = "Add Farm (Currently " + gameData.carrotFarm + ")<br>x10 Carrot production<br>Cost: " + gameData.carrotFarmCost + " Carrot"
+        document.getElementById("carrotFarm").innerHTML = "Add Farm (Currently " + gameData.carrotFarm + ")<br>Cost: " + gameData.carrotFarmCost + " Carrot"
         if (gameData.empire == 1) {
-            document.getElementById("buildEmpire").innerHTML = "Build a town Cost: 100 Farm"
+            document.getElementById("buildEmpire").innerHTML = "Build a town<br>x10 Carrot production<br>Cost: 100 Farm"
         }
         if (gameData.empire == 2) {
-            document.getElementById("buildEmpire").innerHTML = "Build a Empire Cost: 1000 Farm"
+            document.getElementById("buildEmpire").innerHTML = "Build a Empire<br>x10 Carrot production<br>Cost: 1000 Farm"
         }
         if (gameData.empire == 3) {
             document.getElementById("buildEmpire").innerHTML = "You already have a Empire"
