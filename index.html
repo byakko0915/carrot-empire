@@ -8,13 +8,14 @@
     <link rel="stylesheet" href="./main.css">
 </head>
 <body>
-    <p id="carrotHarvested" style="font-size: 2em; line-height: 0.5em;">10 Carrot harvested</p>
-    <p id="carrotPerSecond" style="line-height: 0.5em; margin-bottom: 4em;">0 Carrot per second</p>
+    <p id="carrotHarvested" style="font-size: 2.5em; line-height: 0.5em;">10.0 Carrot harvested</p>
+    <p id="carrotPerSecond" style="font-size: 1.3em; line-height: 0.5em; margin-bottom: 4em;">0.0 Carrot per second</p>
     <p style="font-size: 1.5em; font-weight: bold; line-height: 0;">Upgrades</p>
     <div class="button">
         <button onclick="buyCarrotFarm()" id="carrotFarm" class="button1">Add Farm (Currently 0)<br>Cost: 10 Carrot</button>
-        <button onclick="buildEmpire()" id="buildEmpire" class="button1">Build a village<br>x10 Carrot production<br>Cost: 10 Farm</button>
+        <button onclick="buyEmpire()" id="carrotEmpire" class="button1">Build a village<br>x10 Carrot production<br>Req: 10 Farm</button>
     </div>
-    <script src="main.js" charset="UTF-8" type="text/javascript"></script>
+    <script src="https://cdn.jsdelivr.net/npm/break_infinity.js@2"></script>
+    <script src="./main.js" charset="UTF-8" type="text/javascript"></script>
 </body>
 </html>
